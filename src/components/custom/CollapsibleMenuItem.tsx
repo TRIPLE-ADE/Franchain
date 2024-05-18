@@ -36,7 +36,7 @@ const CollapsibleMenuItem: React.FC<CollapsibleMenuItemProps> = ({
             <Button
               asChild
               className={cn(
-                pathname === subMenuItem.path ? "font-bold" : "font-light"
+                pathname === subMenuItem.path ? "font-bold" : "font-light",
               )}
               key={index}
             >

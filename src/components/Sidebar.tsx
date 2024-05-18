@@ -12,7 +12,7 @@ const Sidebar: React.FC = () => {
   // Handle menu item click to toggle the open state of the collapsible menu item.
   const handleMenuItemClick = (index: number) => {
     setOpenMenuItem((prevOpenMenuItem) =>
-      prevOpenMenuItem === index ? null : index
+      prevOpenMenuItem === index ? null : index,
     );
   };
 
@@ -43,7 +43,7 @@ const Sidebar: React.FC = () => {
                 <Link to={menuItem.path!}>{menuItem.label}</Link>
               </Button>
             </li>
-          )
+          ),
         )}
       </ul>
       <Link to="/">Settings</Link>

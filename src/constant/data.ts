@@ -5,17 +5,14 @@ export const menuItems = [
   },
   {
     label: "Collections",
-    submenu: [
-    ],
+    submenu: [],
   },
   {
     label: "Operators",
-    submenu: [
-    ],
+    submenu: [],
   },
   {
     label: "Locations",
-    submenu: [
-    ],
+    submenu: [],
   },
 ];
