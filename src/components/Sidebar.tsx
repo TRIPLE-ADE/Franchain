@@ -5,14 +5,20 @@ import { MenuItem } from "@/types/collapsible";
 import CollapsibleMenuItem from "./custom/CollapsibleMenuItem";
 import { Button } from "./ui/button";
 
+/**
+ * Sidebar component that displays a collapsible menu with menu items and a settings button.
+ */
 const Sidebar: React.FC = () => {
   const [openMenuItem, setOpenMenuItem] = useState<number | null>(null);
   const { pathname } = useLocation();
 
-  // Handle menu item click to toggle the open state of the collapsible menu item.
+  /**
+   * Handles the click event of a menu item to toggle the open state of the collapsible menu item.
+   * @param index - The index of the menu item.
+   */
   const handleMenuItemClick = (index: number) => {
     setOpenMenuItem((prevOpenMenuItem) =>
-      prevOpenMenuItem === index ? null : index
+      prevOpenMenuItem === index ? null : index,
     );
   };
 
@@ -44,12 +50,12 @@ const Sidebar: React.FC = () => {
                 <Link to={menuItem.path!}>{menuItem.label}</Link>
               </Button>
             </li>
-          )
+          ),
         )}
       </ul>
       <Button
         asChild
-        className='mt-auto'
+        className="mt-auto"
         variant={pathname === "/settings" ? "primary" : "default"}
       >
         <Link to="/settings">Settings</Link>
