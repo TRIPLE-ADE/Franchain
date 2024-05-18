@@ -12,7 +12,7 @@ const Layout = ({ children }: LayoutProps) => {
       <div
         className={`ml-auto max-w-[100rem] 2xl:ml-72 w-full sm:w-[calc(100%-289px)]`}
       >
-        <main className="mt-[88px]">{children}</main>
+        <main className="mt-[88px] font-sans">{children}</main>
       </div>
     </>
   );
