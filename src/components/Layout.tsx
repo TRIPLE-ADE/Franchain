@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Sidebar from "./Sidebar";
 
 interface LayoutProps {
   children: ReactNode;
@@ -7,8 +8,11 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <div className={`ml-auto max-w-[100rem] 2xl:ml-72 w-full`}>
-        <main className="mt-[88px]">{children}</main>
+      <Sidebar />
+      <div
+        className={`ml-auto max-w-[100rem] 2xl:ml-72 w-full sm:w-[calc(100%-289px)]`}
+      >
+        <main className="mt-[88px] font-sans">{children}</main>
       </div>
     </>
   );

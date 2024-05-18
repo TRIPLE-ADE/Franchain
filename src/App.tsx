@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 function App() {
   return (
     <Layout>
-      <h1>App</h1>components
+      <h1>App</h1>
     </Layout>
   );
 }
