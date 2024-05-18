@@ -12,7 +12,7 @@ const Sidebar: React.FC = () => {
   // Handle menu item click to toggle the open state of the collapsible menu item.
   const handleMenuItemClick = (index: number) => {
     setOpenMenuItem((prevOpenMenuItem) =>
-      prevOpenMenuItem === index ? null : index,
+      prevOpenMenuItem === index ? null : index
     );
   };
 
@@ -21,7 +21,7 @@ const Sidebar: React.FC = () => {
       <Link to="/" className="text-[40px] font-bold pb-[60px] pl-[30px]">
         Franchain
       </Link>
-      <ul className="flex flex-col gap-2 mb-10">
+      <ul className="flex flex-col gap-[10px] mb-10">
         {/* Render menu items */}
         {menuItems.map((menuItem: MenuItem, index: number) =>
           menuItem.submenu ? (
@@ -37,16 +37,23 @@ const Sidebar: React.FC = () => {
             // Render menu item if it does not have a submenu
             <li key={index}>
               <Button
+                asChild
                 onClick={() => handleMenuItemClick(index)}
                 variant={pathname === menuItem.path ? "primary" : "default"}
               >
                 <Link to={menuItem.path!}>{menuItem.label}</Link>
               </Button>
             </li>
-          ),
+          )
         )}
       </ul>
-      <Link to="/">Settings</Link>
+      <Button
+        asChild
+        className='mt-auto'
+        variant={pathname === "/settings" ? "primary" : "default"}
+      >
+        <Link to="/settings">Settings</Link>
+      </Button>
     </div>
   );
 };
