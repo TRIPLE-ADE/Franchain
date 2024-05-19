@@ -66,10 +66,7 @@ const SetupProcess: React.FC<SetupProcessProps> = ({
               ),
             }}
           >
-            <StepDetails
-              title={step.title}
-              description={step.description}
-            />
+            <StepDetails title={step.title} description={step.description} />
           </CollapsibleMenuItem>
         ))}
       </ul>
