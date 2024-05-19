@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 import {
   Collapsible,
@@ -11,11 +10,10 @@ import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 
 const CollapsibleMenuItem: React.FC<CollapsibleMenuItemProps> = ({
-  submenu,
   isOpen,
   onToggle,
   label,
-  pathname,
+  children,
 }) => {
   return (
     <li className="mt-auto">
@@ -36,20 +34,7 @@ const CollapsibleMenuItem: React.FC<CollapsibleMenuItemProps> = ({
           </Button>
         </CollapsibleTrigger>
         <CollapsibleContent className="relative ml-3 pb-2">
-          {/* Render submenu items */}
-          {submenu?.map((subMenuItem, index) => (
-            <Button
-              asChild
-              className={cn(
-                pathname === subMenuItem.path ? "font-bold" : "font-light",
-              )}
-              key={index}
-            >
-              <Link to={subMenuItem.path!} key={index}>
-                {subMenuItem.label}
-              </Link>
-            </Button>
-          ))}
+          {children}
         </CollapsibleContent>
       </Collapsible>
     </li>

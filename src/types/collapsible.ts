@@ -7,5 +7,5 @@ export interface MenuItem {
 export interface CollapsibleMenuItemProps extends MenuItem {
   onToggle: () => void;
   isOpen: boolean;
-  pathname: string;
+  children: React.ReactNode;
 }

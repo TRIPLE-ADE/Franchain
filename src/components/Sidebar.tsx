@@ -1,26 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { menuItems } from "@/constant/data.ts";
 import { MenuItem } from "@/types/collapsible";
 import CollapsibleMenuItem from "./custom/CollapsibleMenuItem";
 import { Button } from "./ui/button";
+import useToggleState from "@/hooks/useToggleState";
 
 /**
  * Sidebar component that displays a collapsible menu with menu items and a settings button.
  */
 const Sidebar: React.FC = () => {
-  const [openMenuItem, setOpenMenuItem] = useState<number | null>(null);
+  const { openStep: openMenuItem, handleToggle: handleMenuItemClick } =
+    useToggleState();
   const { pathname } = useLocation();
-
-  /**
-   * Handles the click event of a menu item to toggle the open state of the collapsible menu item.
-   * @param index - The index of the menu item.
-   */
-  const handleMenuItemClick = (index: number) => {
-    setOpenMenuItem((prevOpenMenuItem) =>
-      prevOpenMenuItem === index ? null : index,
-    );
-  };
 
   return (
     <div className="w-[289px] py-[60px] top-0 h-full bg-neutral-900 text-white fixed flex flex-col overflow-y-auto side-scrollbar -left-full sm:left-0">
@@ -34,11 +26,23 @@ const Sidebar: React.FC = () => {
             // Render collapsible menu item if it has a submenu
             <CollapsibleMenuItem
               key={index}
-              {...menuItem}
-              onToggle={() => handleMenuItemClick(index)}
+              label={menuItem.label}
               isOpen={index === openMenuItem}
-              pathname={pathname}
-            />
+              onToggle={() => handleMenuItemClick(index)}
+            >
+              {/* Render submenu items as children */}
+              {menuItem.submenu?.map((subMenuItem, subIndex) => (
+                <Button
+                  asChild
+                  className={
+                    pathname === subMenuItem.path ? "font-bold" : "font-light"
+                  }
+                  key={subIndex}
+                >
+                  <Link to={subMenuItem.path!}>{subMenuItem.label}</Link>
+                </Button>
+              ))}
+            </CollapsibleMenuItem>
           ) : (
             // Render menu item if it does not have a submenu
             <li key={index}>
