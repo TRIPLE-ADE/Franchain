@@ -26,7 +26,7 @@ const SetupProcess: React.FC<SetupProcessProps> = ({
     setProgressPercentage((completedSteps / totalSteps) * 100);
   }, [completedSteps, totalSteps]);
   return (
-    <section className="shadow-sm rounded-2xl rounded-br-lg">
+    <section className="shadow-sm rounded-2xl overflow-hidden">
       {/* Render the setup process component */}
       <div className="flex justify-between items-center bg-white py-10 px-14">
         <p className="text-2xl">Let's get you up and running</p>
