@@ -2,7 +2,7 @@ import profile from "@/assets/profile.webp";
 
 const Hero = () => {
   return (
-    <section className="relative isolate h-64 pt-2.5 overflow-hidden">
+    <section className="relative isolate h-64 pt-2.5 overflow-hidden pl-3.5">
       <div className="rounded-[10px] px-7 py-4 absolute left-52 rounded-es-none bg-white border border-indigo-400 max-w-96 ">
         <p className="text-lg">
           Hi Jonathan, I'm Dan from Franchain. I'm here to help you get set up
