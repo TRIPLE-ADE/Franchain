@@ -4,6 +4,7 @@ import CollapsibleMenuItem from "./custom/CollapsibleMenuItem";
 import useToggleState from "@/hooks/useToggleState";
 import { steps } from "@/constant/data";
 import { cn } from "@/lib/utils";
+import StepDetails from "./StepDetails";
 
 /**
  * Represents a setup process component.
@@ -52,7 +53,7 @@ const SetupProcess: React.FC<SetupProcessProps> = ({
             onToggle={() => handleToggle(step.stepNumber)}
             buttonProps={{
               className:
-                "w-full text-left p-5 text-black text-xl hover:bg-slate-50",
+                "w-full text-left p-5 text-black text-xl hover:bg-slate-50 pr-10 mx-2.5",
               children: (
                 <span
                   className={cn(
@@ -65,7 +66,10 @@ const SetupProcess: React.FC<SetupProcessProps> = ({
               ),
             }}
           >
-            <p></p>
+            <StepDetails
+              title={step.title}
+              description={step.description}
+            />
           </CollapsibleMenuItem>
         ))}
       </ul>

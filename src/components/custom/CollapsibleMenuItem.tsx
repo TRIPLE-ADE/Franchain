@@ -31,13 +31,13 @@ const CollapsibleMenuItem: React.FC<CollapsibleMenuItemProps> = ({
             <ChevronDownIcon
               className={cn(
                 "h-6 w-6 transition-transform transform",
-                isOpen && "rotate-180",
+                isOpen && "rotate-180"
               )}
             />
             <span className="sr-only">Toggle</span>
           </Button>
         </CollapsibleTrigger>
-        <CollapsibleContent className="relative ml-3 pb-2">
+        <CollapsibleContent className="relative ml-3 data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 pb-2 data-[state=open]:animate-accordion-down data-[state=close]:animate-accordion-up">
           {children}
         </CollapsibleContent>
       </Collapsible>
