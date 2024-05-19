@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { SetupProcessProps } from "@/types/setupProcess";
-import StepDetails from "./StepDetails";
 import CollapsibleMenuItem from "./custom/CollapsibleMenuItem";
 import useToggleState from "@/hooks/useToggleState";
 import { steps } from "@/constant/data";
@@ -12,7 +11,10 @@ import { cn } from "@/lib/utils";
  * @param totalSteps - The total number of steps.
  */
 
-const SetupProcess: React.FC<SetupProcessProps> = ({ completedSteps, totalSteps}) => {
+const SetupProcess: React.FC<SetupProcessProps> = ({
+  completedSteps,
+  totalSteps,
+}) => {
   const [progressPercentage, setProgressPercentage] = useState(0);
   const { openStep, handleToggle } = useToggleState();
   /**
@@ -49,19 +51,21 @@ const SetupProcess: React.FC<SetupProcessProps> = ({ completedSteps, totalSteps}
             isOpen={openStep === step.stepNumber}
             onToggle={() => handleToggle(step.stepNumber)}
             buttonProps={{
-              className: "w-full text-left p-5 text-black text-xl hover:bg-slate-50",
+              className:
+                "w-full text-left p-5 text-black text-xl hover:bg-slate-50",
               children: (
-                <span className={cn("my-4 w-10 transition-all flex justify-center items-center h-10 rounded-full border-[0.1px] bg-indigo-400 text-white border-black",
-                openStep === step.stepNumber && "bg-white text-black"
-                )}>{step.stepNumber}</span>
+                <span
+                  className={cn(
+                    "my-4 w-10 transition-all flex justify-center items-center h-10 rounded-full border-[0.1px] bg-indigo-400 text-white border-black",
+                    openStep === step.stepNumber && "bg-white text-black",
+                  )}
+                >
+                  {step.stepNumber}
+                </span>
               ),
             }}
           >
-            <StepDetails
-              stepNumber={step.stepNumber}
-              title={step.title}
-              description={step.description}
-            />
+            <p></p>
           </CollapsibleMenuItem>
         ))}
       </ul>
