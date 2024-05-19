@@ -27,7 +27,7 @@ const CollapsibleMenuItem: React.FC<CollapsibleMenuItemProps> = ({
             <ChevronDownIcon
               className={cn(
                 "h-6 w-6 transition-transform transform",
-                isOpen && "rotate-180"
+                isOpen && "rotate-180",
               )}
             />
             <span className="sr-only">Toggle</span>

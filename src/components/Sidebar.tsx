@@ -13,7 +13,7 @@ const Sidebar: React.FC = () => {
   const { openStep: openMenuItem, handleToggle: handleMenuItemClick } =
     useToggleState();
   const { pathname } = useLocation();
-  
+
   return (
     <div className="w-[289px] py-[60px] top-0 h-full bg-neutral-900 text-white fixed flex flex-col overflow-y-auto side-scrollbar -left-full sm:left-0">
       <Link to="/" className="text-[40px] font-bold pb-[60px] pl-[30px]">
@@ -56,7 +56,7 @@ const Sidebar: React.FC = () => {
                 </span>
               </Button>
             </li>
-          )
+          ),
         )}
       </ul>
       <Button
