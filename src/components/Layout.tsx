@@ -9,7 +9,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Sidebar />
-      <main className="mt-[88px] font-sans ml-auto max-w-[100rem] 2xl:ml-72 w-full sm:w-[calc(100%-289px)]">
+      <main className="px-28 font-sans ml-auto max-w-[100rem] 2xl:ml-72 w-full sm:w-[calc(100%-289px)] bg-slate-50">
         {children}
       </main>
     </>
