@@ -1,10 +1,10 @@
-import Layout from "@/components/Layout";
-import Header from "@/components/Header";
+import { Layout, Header, Hero } from "./components";
 
 function App() {
   return (
     <Layout>
       <Header />
+      <Hero />
     </Layout>
   );
 }
