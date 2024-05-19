@@ -55,3 +55,15 @@ export const steps = [
       "This is a sub header that will explain the basics of the video. We should think about what we can write in this section as it will be important.",
   },
 ];
+
+export const assistanceItems = [
+  {
+    title: "Inviting an operator",
+  },
+  {
+    title: "Assigning a location",
+  },
+  {
+    title: "Setting up auto withdrawals",
+  },
+];
