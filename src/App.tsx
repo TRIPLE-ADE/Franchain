@@ -1,9 +1,10 @@
 import Layout from "@/components/Layout";
+import Header from "@/components/Header";
 
 function App() {
   return (
     <Layout>
-      <h1>App</h1>
+      <Header />
     </Layout>
   );
 }
