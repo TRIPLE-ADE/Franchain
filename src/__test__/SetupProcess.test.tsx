@@ -17,6 +17,14 @@ test("renders the setup process component", () => {
   expect(progressBarElement).toBeInTheDocument();
 });
 
+test("renders the correct number of collapsible menu items", () => {
+  render(<SetupProcess completedSteps={0} totalSteps={5} />);
+
+  // Assert that the correct number of menu items are rendered
+  const menuItemElements = screen.getAllByRole("button");
+  expect(menuItemElements.length).toBe(6);
+});
+
 test("calculates the progress percentage correctly", () => {
   render(<SetupProcess completedSteps={2} totalSteps={10} />);
 

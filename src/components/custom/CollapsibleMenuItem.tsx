@@ -14,6 +14,7 @@ const CollapsibleMenuItem: React.FC<CollapsibleMenuItemProps> = ({
   onToggle,
   label,
   children,
+  buttonProps,
 }) => {
   return (
     <li className="mt-auto">
@@ -22,8 +23,11 @@ const CollapsibleMenuItem: React.FC<CollapsibleMenuItemProps> = ({
           className="text-base font-light flex items-center gap-3"
           asChild
         >
-          <Button className="justify-between">
-            {label}
+          <Button className={cn("justify-between", buttonProps?.className)}>
+            <span className="flex items-center gap-4">
+              {buttonProps?.children}
+              {label}
+            </span>
             <ChevronDownIcon
               className={cn(
                 "h-6 w-6 transition-transform transform",
@@ -33,7 +37,7 @@ const CollapsibleMenuItem: React.FC<CollapsibleMenuItemProps> = ({
             <span className="sr-only">Toggle</span>
           </Button>
         </CollapsibleTrigger>
-        <CollapsibleContent className="relative ml-3 pb-2">
+        <CollapsibleContent className="relative ml-3 data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 pb-2 data-[state=open]:animate-accordion-down data-[state=close]:animate-accordion-up">
           {children}
         </CollapsibleContent>
       </Collapsible>
