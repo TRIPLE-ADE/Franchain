@@ -43,11 +43,13 @@ const Sidebar: React.FC = () => {
             // Render menu item if it does not have a submenu
             <li key={index}>
               <Button
-                asChild
-                onClick={() => handleMenuItemClick(index)}
                 variant={pathname === menuItem.path ? "primary" : "default"}
+                className="justify-between"
               >
                 <Link to={menuItem.path!}>{menuItem.label}</Link>
+                <span className="py-[5px] px-2.5 bg-white rounded text-sm text-black font-normal">
+                  1/6
+                </span>
               </Button>
             </li>
           ),

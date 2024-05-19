@@ -26,7 +26,12 @@ const CollapsibleMenuItem: React.FC<CollapsibleMenuItemProps> = ({
         >
           <Button className="justify-between">
             {label}
-            <ChevronDownIcon className="h-6 w-6" />
+            <ChevronDownIcon
+              className={cn(
+                "h-6 w-6 transition-transform transform",
+                isOpen && "rotate-180",
+              )}
+            />
             <span className="sr-only">Toggle</span>
           </Button>
         </CollapsibleTrigger>
