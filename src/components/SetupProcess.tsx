@@ -28,8 +28,8 @@ const SetupProcess: React.FC<SetupProcessProps> = ({
   return (
     <section className="shadow-sm rounded-2xl overflow-hidden">
       {/* Render the setup process component */}
-      <div className="flex justify-between items-center bg-white py-10 px-14">
-        <p className="text-2xl">Let's get you up and running</p>
+      <div className="justify-between items-center bg-white py-10 px-14 sm:flex">
+        <p className="text-lg sm:text-2xl">Let's get you up and running</p>
         <p className="text-sm">
           {totalSteps - completedSteps}/{totalSteps} steps remaining
         </p>
@@ -53,7 +53,7 @@ const SetupProcess: React.FC<SetupProcessProps> = ({
             onToggle={() => handleToggle(step.stepNumber)}
             buttonProps={{
               className:
-                "w-full text-left p-5 text-black text-xl hover:bg-slate-50 pr-10 mx-2.5",
+                "w-full text-left pr-2 pl-5 text-black text-wrap sm:text-xl hover:bg-slate-50 sm:mx-2.5 sm:pr-10 sm:pl-[30px]",
               children: (
                 <span
                   className={cn(

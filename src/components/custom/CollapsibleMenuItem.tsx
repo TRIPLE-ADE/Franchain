@@ -24,7 +24,7 @@ const CollapsibleMenuItem: React.FC<CollapsibleMenuItemProps> = ({
           asChild
         >
           <Button className={cn("justify-between", buttonProps?.className)}>
-            <span className="flex items-center gap-4">
+            <span className="flex items-center gap-2">
               {buttonProps?.children}
               {label}
             </span>
