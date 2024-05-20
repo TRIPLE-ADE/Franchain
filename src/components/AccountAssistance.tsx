@@ -5,7 +5,9 @@ import Card from "./Card";
 const AccountAssistance = () => {
   return (
     <section className="mt-16">
-      <h3 className="font-medium text-3xl text-center sm:text-[40px]">Need assistance?</h3>
+      <h3 className="font-medium text-3xl text-center sm:text-[40px]">
+        Need assistance?
+      </h3>
       <div className="mt-9 mb-10 grid gap-8 sm:grid-cols-3 sm:justify-between w-full">
         {assistanceItems.map((item, index) => (
           <Card key={index} {...item} />

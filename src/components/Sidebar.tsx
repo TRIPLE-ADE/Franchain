@@ -25,7 +25,7 @@ const Sidebar: React.FC = () => {
       <div
         className={cn(
           "md:hidden p-4 fixed z-20 w-full",
-          !isSidebarOpen && "bg-slate-50"
+          !isSidebarOpen && "bg-slate-50",
         )}
       >
         <button onClick={handleHamburgerClick}>
@@ -42,7 +42,7 @@ const Sidebar: React.FC = () => {
         className={cn(
           "w-[289px] z-10 py-[60px] top-0 h-full bg-neutral-900 text-white fixed flex flex-col overflow-y-auto side-scrollbar transition-transform duration-300",
           isSidebarOpen ? "translate-x-0" : "-translate-x-full",
-          "md:translate-x-0"
+          "md:translate-x-0",
         )}
       >
         <Link to="/" className="text-[40px] font-bold pb-[60px] pl-[30px]">
@@ -85,7 +85,7 @@ const Sidebar: React.FC = () => {
                   </span>
                 </Button>
               </li>
-            )
+            ),
           )}
         </ul>
         <Button
